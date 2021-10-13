@@ -24,6 +24,14 @@
 }
 
 /* RESET */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -113,7 +121,6 @@ section {
     margin: 0 auto;
     max-width: 1258px;
     width: 100%;
-
 }
 
 .content h1 {
@@ -121,6 +128,7 @@ section {
     padding-top: 100px;
     justify-content: center;
 }
+
 .text {
     width: 600px;
 }
@@ -128,11 +136,13 @@ section {
 .text.left {
     margin-left: 150px;
 }
+
 .text.right {
     margin-right: 150px;
 }
-/*TYPOGRAPHY*/
 
+
+/*TYPOGRAPHY*/
 h1 {
     font-family: 'Comfortaa', cursive;
     font-size: 48px;
@@ -140,10 +150,32 @@ h1 {
     color: mediumspringgreen;
     letter-spacing: 2px;
 }
+
 h2 {
     font-size: 32px;
-    color: ghostwhite;
+    color: lightgreen;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
 }
+
+h3 {
+    font-size: 24px;
+    color: springgreen;
+    letter-spacing: 0;
+
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+
+    }
+}
+
 
 /*HEADER */
 nav {
@@ -183,32 +215,37 @@ nav ul li a:hover {
 #home {
     padding: 0;
 }
+
 #home .content {
     align-items: center;
     height: calc(100vh - 56px);
     justify-content: center;
-
-
 }
 
+@media screen and (max-width: 576px) {
+    #home .content {
+
+    }
+}
 #home .social a {
-    color:white;
+    color: white;
 
 }
+
 #home .social a:hover {
     color: mediumspringgreen;
 }
 
 /* about me*/
 
-#about .content{
+#about .content {
     flex-direction: row;
     align-items: center;
-    margin-left: 450px;
 }
 
 #about img {
-    width: 30%;
+    width: 20%;
+    padding-right: 50px;
 }
 
 #about .aboutmetext {
@@ -216,35 +253,110 @@ nav ul li a:hover {
     width: 600px;
     letter-spacing: 2px;
 }
+
 #about .aboutmetext h2 {
     margin-bottom: 40px;
 }
 
 /*skills*/
 
-#skills .content {
-    flex-direction: row;
-    margin-left: 550px;
+.skills {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 100px;
+    flex-wrap: wrap;
 }
 
-#skills p {
-    padding-top: 40px;
-    letter-spacing: 2px;
-
+#skills .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #skills img {
-    width: 50%;
+    width: 40%;
 }
 
-#skills .skillstext {
-    margin-left: 100px;
-    width: 600px;
+
+/*skills = skills-list*/
+.skills-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/*skill-content = skill-item*/
+.skill-content {
+    display: block;
+    width: 100px;
+    margin: 0 20px 40px;
+}
+
+/* skill = circulos*/
+.skill {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 100px;
+}
+
+.sk95 {
+    background-image: conic-gradient(mediumspringgreen 0 95%, gray 95% 100%);
+}
+
+.sk90 {
+    background-image: conic-gradient(mediumspringgreen 0 90%, gray 90% 100%);
+}
+
+.sk85 {
+    background-image: conic-gradient(mediumspringgreen 0 85%, gray 85% 100%);
+}
+
+.sk80 {
+    background-image: conic-gradient(mediumspringgreen 0 80%, gray 80% 100%);
+}
+
+.sk70 {
+    background-image: conic-gradient(mediumspringgreen 0 70%, gray 70% 100%);
+}
+
+.sk50 {
+    background-image: conic-gradient(mediumspringgreen 0 50%, gray 50% 100%);
+}
+
+
+.skill span {
+    background: black;
+    border-radius: 50%;
+    color: white;
+    display: block;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+
+}
+
+.skill-content small {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    color: white;
 }
 
 /*works*/
 
-#works .content{
+#works .content {
     flex-direction: row;
     align-items: center;
     margin-left: 450px;
@@ -264,9 +376,129 @@ nav ul li a:hover {
     letter-spacing: 2px;
 }
 
+.tags {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.tags span {
+    background: mediumseagreen;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 10px;
+    padding: 0 15px;
+}
+
 /*contact*/
 
+#contact {
+    background: linear-gradient(135deg, white 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, white 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, white 25%, transparent 25%),
+    linear-gradient(45deg, white 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: darkseagreen;
+    padding: 70px 0;
+}
+
 #contact .content {
+    display: flex;
     align-items: center;
+    flex-direction: row;
+    background: white;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+#contact span {
+    color: black;
+    display: block;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 46px;
+    width: 428px;
+}
+
+#contact form {
+    display: block;
+    width: 690px;
+}
+
+#contact form input,
+#contact form textarea {
+    border: 3px solid black;
+    border-radius: 4px;
+    display: block;
+    font-size: 16px;
+    heigth: 52px;
+    margin-bottom: 24px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+#contact form textarea {
+    height: 125px;
+    padding: 10px;
+}
+
+#contact form button {
+    background: mediumseagreen;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    height: 52px;
+    width: 175px;
+}
+
+/*FOOTER*/
+footer {
+    background: darkseagreen;
+    padding: 30px;
+}
+
+footer .content {
+    align-items: center;
+    flex-direction: column;
     justify-content: center;
+}
+
+footer .social {
+    margin-bottom: 25px;
+}
+
+footer .social a {
+    color: white;
+}
+
+footer .social svg {
+    height: 35px;
+    width: 35px;
+}
+
+/* large devices (desktops, less than 1200px) */
+@media (max-width: 1200px) {
+
+}
+
+/* medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+
+}
+
+/* small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
 }
